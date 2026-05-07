@@ -1,31 +1,30 @@
 <div align="center">
 
-<img src="assets/bot_avatar.png" alt="星辰 Stellar TV" width="200" style="border-radius: 50%; box-shadow: 0 4px 20px rgba(0,0,0,0.3);"/>
+<img src="assets/bot_avatar.png" alt="星辰 Stellar TV" width="320"/>
+
+<br/>
 
 # ⭐ 星辰 · Stellar TV
 
-### 下一代智能 IPTV 体验
+### 📺 下一代智能 IPTV 影视直播平台
 
-**不提供任何下载、源码拷贝或复制。仅供展示。**
+<br/>
 
-**[🇨🇳 中文](README.md) | [🇺🇸 English](README_EN.md)**
+![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
+![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
+![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.0-brightgreen?style=flat-square)
+![Status](https://img.shields.io/badge/status-🟢%20在线-green?style=flat-square)
 
----
+<br/>
 
-![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=social)
-![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=social)
-![License](https://img.shields.io/badge/license-Proprietary-red)
-![Platform](https://img.shields.io/badge/platform-Telegram-blue)
-![Version](https://img.shields.io/badge/version-2.0-brightgreen)
-![Status](https://img.shields.io/badge/status-在线-green)
+**[🇨🇳 中文](README.md) · [🇺🇸 English](README_EN.md)**
+
+<br/>
+
+> ⚠️ 本仓库仅供项目展示，**不提供任何下载、源码拷贝或复制**。
 
 </div>
-
----
-
-## 📺 关于星辰 · Stellar TV
-
-星辰 · Stellar TV 是一款基于 **Telegram Bot** 的智能 IPTV 服务平台，为用户提供流畅、高清的直播观看体验。支持央视、卫视、地方台、港澳台、海外华语等数百个频道，覆盖手机、平板、电脑、智能电视等全平台。
 
 ---
 
@@ -33,22 +32,36 @@
 
 <div align="center">
 
-### 👇 点击下方链接，直接在 Telegram 中体验 👇
+### 👇 点击下方按钮，直接在 Telegram 中开启 👇
 
 ### 🤖 [@xingcheniptv_bot](https://t.me/xingcheniptv_bot)
 
+<br/>
+
+| 步骤 | 操作 |
+|:---:|------|
+| **①** | 点击上方链接或在 Telegram 搜索 `@xingcheniptv_bot` |
+| **②** | 点击 **开始** 按钮 |
+| **③** | 按提示完成注册 |
+| **④** | 即可免费试用所有频道 |
+
 </div>
 
-**体验步骤：**
+---
 
-1. 点击上方 Bot 链接或在 Telegram 搜索 `@xingcheniptv_bot`
-2. 点击 **开始** 按钮
-3. 按提示完成注册
-4. 即可免费试用所有频道
+## 📺 关于星辰 · Stellar TV
+
+星辰 · Stellar TV 是一款基于 **Telegram Bot** 的智能 IPTV 影视直播平台，为用户提供流畅、高清的直播观看体验。
+
+**覆盖内容：** 央视 · 卫视 · 地方台 · 港澳台 · 海外华语 · 体育 · 新闻 · 娱乐
+
+**支持平台：** 📱 手机 · 📱 平板 · 💻 电脑 · 📺 智能电视
 
 ---
 
 ## ✨ 核心功能
+
+<div align="center">
 
 | 功能 | 描述 |
 |:---:|------|
@@ -64,6 +77,8 @@
 | 💳 **在线支付** | 支持多种支付方式，卡密即时到账 |
 | 🎨 **个性化界面** | 科幻主题 UI，沉浸式观看体验 |
 | 📊 **数据统计** | 管理员实时查看用户数据、频道状态 |
+
+</div>
 
 ---
 
@@ -87,6 +102,8 @@
 
 ## 📋 套餐价格
 
+<div align="center">
+
 | 套餐 | 价格 | 说明 |
 |:---:|:---:|------|
 | 🆓 **免费试用** | **¥0** | 新用户注册即可体验 |
@@ -94,28 +111,30 @@
 | 📅 **季卡** | **¥25.0** | 90天有效期 |
 | 📅 **年卡** | **¥88.0** | 365天有效期 |
 
+</div>
+
 ---
 
 ## 🏗️ 技术架构
 
 ```mermaid
 graph TB
-    subgraph StellarTV["星辰 · Stellar TV"]
-        Bot["🤖 Telegram Bot\n端口 443"]
-        Web["🖥️ Web 管理面板\n端口 8089"]
-        Pay["💳 支付服务\n端口 8088"]
+    subgraph StellarTV["⭐ 星辰 · Stellar TV"]
+        Bot["🤖 Telegram Bot<br/>端口 443"]
+        Web["🖥️ Web 管理面板<br/>端口 8089"]
+        Pay["💳 支付服务<br/>端口 8088"]
     end
 
-    Bot --> DB[("MySQL 数据库")]
+    Bot --> DB[("MySQL 8.0")]
     Web --> DB
     Pay --> DB
 
     subgraph AIAgent["🤖 AI Agent 自动运维"]
-        direction TB
-        E["🔄 进程监控与自动重启"]
-        F["🔥 防火墙冷却后自动重试"]
-        G["📡 直播源定时更新"]
-        H["🔔 故障自愈与通知"]
+        direction LR
+        E["🔄 进程监控"]
+        F["🔥 防火墙冷却重试"]
+        G["📡 直播源更新"]
+        H["🔔 故障自愈"]
     end
 
     DB --> E
@@ -139,12 +158,16 @@ graph TB
 
 ## 📊 项目数据
 
+<div align="center">
+
 | 指标 | 数据 |
 |:---:|:---:|
 | 📺 **频道数量** | 500+ 直播源 |
 | 👥 **注册用户** | 持续增长中 |
 | ⏱️ **服务可用性** | 99%+ |
 | 🔄 **运维效率** | 提升 85% (AI Agent 驱动) |
+
+</div>
 
 ---
 
