@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/bot_avatar.png" alt="Stellar TV" width="320"/>
+<img src="assets/bot_avatar.png?v=2" alt="Stellar TV" width="320"/>
 
 <br/>
 
@@ -43,7 +43,7 @@
 | **①** | Click the link above or search `@xingcheniptv_bot` in Telegram |
 | **②** | Click the **Start** button |
 | **③** | Follow the prompts to complete registration |
-| **④** | Enjoy free trial of all channels |
+| **④** | Get your exclusive playback URL |
 
 </div>
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/bot_avatar.png" alt="星辰 Stellar TV" width="320"/>
+<img src="assets/bot_avatar.png?v=2" alt="星辰 Stellar TV" width="320"/>
 
 <br/>
 
@@ -43,7 +43,7 @@
 | **①** | 点击上方链接或在 Telegram 搜索 `@xingcheniptv_bot` |
 | **②** | 点击 **开始** 按钮 |
 | **③** | 按提示完成注册 |
-| **④** | 即可免费试用所有频道 |
+| **④** | 即可获取自己的专属播放地址 |
 
 </div>
 
