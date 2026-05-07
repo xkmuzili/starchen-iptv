@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/bot_avatar.png?v=2" alt="Stellar TV" width="320"/>
+<img src="assets/bot_avatar.png?v=3" alt="Stellar TV" width="320"/>
 
 <br/>
 
@@ -59,24 +59,21 @@ Stellar TV is an intelligent IPTV live streaming platform based on **Telegram Bo
 
 ---
 
-## ✨ Core Features
+## ✨ Bot Features
 
 <div align="center">
 
 | Feature | Description |
 |:---:|------|
-| 🎬 **Massive Channels** | **500+** live sources covering CCTV, satellite TV, local stations, HK/Macau/Taiwan, overseas Chinese |
-| 📱 **Multi-Platform** | Works on phones, tablets, computers, and smart TVs |
-| 🔒 **Secure & Reliable** | End-to-end encryption, privacy data protected |
-| ⚡ **Instant Switching** | Millisecond channel switching, zero buffering |
-| 🎫 **Flexible Plans** | Monthly / Quarterly / Annual subscriptions |
-| 🆓 **Free Trial** | Free trial period for new user registration |
-| 📢 **Real-time Announcements** | Important updates pushed instantly via Bot |
-| 🤖 **AI Smart Support** | 24/7 automatic response to user inquiries, no manual intervention |
-| 🔄 **Auto Operations** | AI Agent-driven automated operations, self-healing, high availability |
-| 💳 **Online Payment** | Multiple payment methods supported, instant card activation |
-| 🎨 **Custom UI** | Sci-fi themed interface for immersive viewing experience |
-| 📊 **Data Analytics** | Admin real-time user data and channel status monitoring |
+| 📺 **Playback URL** | One-click access to your exclusive playback URL, works with any player |
+| 👤 **My Info** | Check account status, remaining days, and expiration date |
+| 💰 **Purchase Plan** | Monthly / Quarterly / Annual, flexible options with instant activation |
+| 🎫 **Redeem Card** | Enter your card code to activate a subscription |
+| 📢 **Report Source** | One-click report when a channel is unavailable, fast repair |
+| 👥 **Join Group** | Join the official Telegram group for updates and support |
+| 📖 **Tutorial** | Detailed step-by-step guide, easy for beginners |
+| 🌐 **Web Panel** | Web-based management panel for orders and account info |
+| ❓ **Help** | FAQ and troubleshooting, get help anytime |
 
 </div>
 
