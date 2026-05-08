@@ -18,7 +18,7 @@
 
 <br/>
 
-**[🇨🇳 中文](README.md) · [🇺🇸 English](README_EN.md)**
+**[🇨🇳 中文](README.md) · [🇺🇸 English](README_EN.md) · [🇹🇼 繁體中文](README_TW.md) · [🇯🇵 日本語](README_JA.md) · [🇰🇷 한국어](README_KO.md)**
 
 <br/>
 
