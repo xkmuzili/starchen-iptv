@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.2-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20在线-green?style=flat-square)
 
 <br/>
@@ -51,11 +51,15 @@
 
 ## 📺 关于星辰 · Stellar TV
 
+<div align="center">
+
 星辰 · Stellar TV 是一款基于 **Telegram Bot** 的智能 IPTV 影视直播平台，为用户提供流畅、高清的直播观看体验。
 
 **覆盖内容：** 央视 · 卫视 · 地方台 · 港澳台 · 海外华语 · 体育 · 新闻 · 娱乐
 
 **支持平台：** 📱 手机 · 📱 平板 · 💻 电脑 · 📺 智能电视
+
+</div>
 
 ---
 
@@ -64,7 +68,7 @@
 <div align="center">
 
 | 功能 | 说明 |
-|:---:|------|
+|:---:|:---:|
 | 📺 **播放地址** | 一键获取专属播放地址，支持复制到任意播放器使用 |
 | 👤 **我的信息** | 查看账号状态、剩余天数、到期时间 |
 | 💰 **购买套餐** | 月卡 / 季卡 / 年卡，灵活选择，即时生效 |
@@ -81,10 +85,12 @@
 
 ## 🖥️ 管理面板
 
+<div align="center">
+
 管理员可通过 Web 面板进行以下操作：
 
 | 模块 | 功能 |
-|:---:|------|
+|:---:|:---:|
 | 📊 **仪表盘** | 实时查看用户数据、频道状态、收入统计 |
 | 📡 **频道管理** | 添加、编辑、删除直播频道 |
 | 📋 **M3U 源** | 管理直播源，支持自动更新 |
@@ -98,15 +104,22 @@
 
 > ⚠️ 管理面板仅对授权管理员开放，不对外提供访问。
 
+</div>
+
 ---
 
 ## 📋 更新日志
 
+<div align="center">
+
 | 版本 | 日期 | 更新内容 |
 |:---:|:---:|------|
-| **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面（M3U覆盖率带颜色、兑换码蓝绿背景）· 📋 侧边栏用户管理/M3U源位置对调 · 📝 后台模块列表同步实际侧边栏（新增源监控、订单管理、数据统计）|
+| **v2.2** | 2026-05-11 | 📢 公告系统升级 · 🔄 直播源每6小时自动更新 · 📺 频道数突破6300+ · 🎨 后台界面优化 |
+| **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面 · 📋 侧边栏对调 |
 | **v2.0** | 2026-05-08 | ✨ 后台管理面板全面重写 |
 | **v1.0** | 2026-05-07 | 🚀 首次部署上线 |
+
+</div>
 
 ---
 
@@ -115,7 +128,7 @@
 <div align="center">
 
 | 套餐 | 价格 | 说明 |
-|:---:|:---:|------|
+|:---:|:---:|:---:|
 | 🆓 **免费试用** | **¥0** | 新用户注册即可体验，3天有效期 |
 | 📅 **月卡** | **¥9.9** | 30天有效期 |
 | 📅 **季卡** | **¥25.0** | 90天有效期 |
@@ -142,14 +155,18 @@ graph LR
 
 ### 🛠️ 技术栈
 
+<div align="center">
+
 | 组件 | 技术 |
-|:---:|------|
+|:---:|:---:|
 | **Bot 框架** | Python 3.12 + python-telegram-bot |
 | **Web 后端** | Flask / Gunicorn |
 | **数据存储** | JSON 文件 |
 | **支付** | 独角数卡 (dujiaoka) |
 | **部署** | Docker + systemd |
 | **服务器** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
+
+</div>
 
 ---
 
@@ -165,6 +182,8 @@ graph LR
 
 ### 📡 频道分组统计（Top 15）
 
+<div align="center">
+
 | 分组 | 数量 | 分组 | 数量 |
 |:---:|:---:|:---:|:---:|
 | 📰 News | 800 | 🎵 Music | 595 |
@@ -175,6 +194,8 @@ graph LR
 | 📺 央视 | 109 | 🎭 Culture | 104 |
 | 🎬 电影 | 84 | 🏀 体育 | 76 |
 | 🌊 港·澳·台 | 50 | | |
+
+</div>
 
 </div>
 
