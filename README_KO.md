@@ -116,7 +116,7 @@ Stellar TV는 **Telegram Bot** 기반의 지능형 IPTV 라이브 스트리밍 �
 
 | 플랜 | 가격 | 설명 |
 |:---:|:---:|------|
-| 🆓 **무료 체험** | **¥0** | 신규 회원가입 시 체험 가능 |
+| 🆓 **무료 체험** | **¥0** | 신규 회원가입 시 3일 체험 가능 |
 | 📅 **월간 플랜** | **¥9.9** | 30일 유효 |
 | 📅 **분기 플랜** | **¥25.0** | 90일 유효 |
 | 📅 **연간 플랜** | **¥88.0** | 365일 유효 |
@@ -135,9 +135,17 @@ graph TB
         Pay["💳 결제 서비스<br/>포트 8088"]
     end
 
-    Bot --> DB[("MySQL 8.0")]
+    Bot --> DB[("JSON 파일 저장<br/>users.json / channels.json / orders.json")]
     Web --> DB
     Pay --> DB
+
+    Pay --> PG["💳 独角数卡<br/>(dujiaoka)"]
+
+    subgraph Server["🖥️ 서버"]
+        direction LR
+        OS["Ubuntu 24.04 LTS"]
+        VPS["RackNerd VPS<br/>4GB KVM"]
+    end
 
     subgraph AIAgent["🤖 AI Agent 자동 운영"]
         direction LR
@@ -157,12 +165,13 @@ graph TB
 
 | 구성 요소 | 기술 |
 |:---:|------|
-| **Bot 프레임워크** | Python + python-telegram-bot |
+| **Bot 프레임워크** | Python 3.12 + python-telegram-bot |
 | **Web 백엔드** | Flask / Gunicorn |
-| **데이터베이스** | MySQL 8.0 |
-| **결제** | 独角数卡 (dujiaoka) |
+| **데이터 저장** | JSON 파일 (users.json / channels.json / orders.json) |
+| **결제** | 独角数卡 (dujiaoka) + Redis |
 | **배포** | Docker + systemd |
-| **운영** | AI Agent (Xiaomi miclaw + Claude Code) |
+| **서버** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
+| **운영** | AI Agent (Xiaomi miclaw) |
 
 ---
 
@@ -172,10 +181,27 @@ graph TB
 
 | 지표 | 데이터 |
 |:---:|:---:|
-| 📺 **채널 수** | 500+ 라이브 소스 |
-| 👥 **가입 사용자** | 지속적 증가 중 |
-| ⏱️ **서비스 가용성** | 99%+ |
-| 🔄 **운영 효율** | 85% 향상 (AI Agent 기반) |
+| 📺 **채널 수** | 6,346 라이브 소스 |
+| 👥 **가입 사용자** | 10 |
+| 📁 **채널 그룹** | 100+ 그룹 |
+| ⏱️ **서비스 상태** | 3개 서비스 모두 실행 중 |
+| 🖥️ **서버** | Ubuntu 24.04 · 4GB RAM · 62GB 디스크 |
+| 🤖 **AI 운영** | Xiaomi miclaw 완전 자동 관리 |
+
+</div>
+
+### 📡 채널 그룹 통계 (Top 15)
+
+| 그룹 | 수 | 그룹 | 수 |
+|:---:|:---:|:---:|:---:|
+| 📰 News | 800 | 🎵 Music | 595 |
+| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
+| ⚽ Sports | 295 | 📡 위성 채널 | 172 |
+| 📚 Education | 192 | 🧒 Kids | 167 |
+| ☘️ 저장 채널 | 144 | 🌍 Documentary | 112 |
+| 📺 CCTV | 109 | 🎭 Culture | 104 |
+| 🎬 영화 채널 | 84 | 🏀 스포츠 채널 | 76 |
+| 🌊 홍콩·마카오·대만 | 50 | | |
 
 </div>
 

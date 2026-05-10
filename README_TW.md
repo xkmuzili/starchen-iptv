@@ -116,7 +116,7 @@
 
 | 套餐 | 價格 | 說明 |
 |:---:|:---:|------|
-| 🆓 **免費試用** | **¥0** | 新用戶註冊即可體驗 |
+| 🆓 **免費試用** | **¥0** | 新用戶註冊即可體驗，3天有效期 |
 | 📅 **月卡** | **¥9.9** | 30天有效期 |
 | 📅 **季卡** | **¥25.0** | 90天有效期 |
 | 📅 **年卡** | **¥88.0** | 365天有效期 |
@@ -135,9 +135,17 @@ graph TB
         Pay["💳 支付服務<br/>連接埠 8088"]
     end
 
-    Bot --> DB[("MySQL 8.0")]
+    Bot --> DB[("JSON 檔案儲存<br/>users.json / channels.json / orders.json")]
     Web --> DB
     Pay --> DB
+
+    Pay --> PG["💳 獨角數卡<br/>(dujiaoka)"]
+
+    subgraph Server["🖥️ 伺服器"]
+        direction LR
+        OS["Ubuntu 24.04 LTS"]
+        VPS["RackNerd VPS<br/>4GB KVM"]
+    end
 
     subgraph AIAgent["🤖 AI Agent 自動運維"]
         direction LR
@@ -157,12 +165,13 @@ graph TB
 
 | 組件 | 技術 |
 |:---:|------|
-| **Bot 框架** | Python + python-telegram-bot |
+| **Bot 框架** | Python 3.12 + python-telegram-bot |
 | **Web 後端** | Flask / Gunicorn |
-| **資料庫** | MySQL 8.0 |
-| **支付** | 獨角數卡 (dujiaoka) |
+| **資料儲存** | JSON 檔案 (users.json / channels.json / orders.json) |
+| **支付** | 獨角數卡 (dujiaoka) + Redis |
 | **部署** | Docker + systemd |
-| **運維** | AI Agent (Xiaomi miclaw + Claude Code) |
+| **伺服器** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
+| **運維** | AI Agent (Xiaomi miclaw) |
 
 ---
 
@@ -172,10 +181,27 @@ graph TB
 
 | 指標 | 數據 |
 |:---:|:---:|
-| 📺 **頻道數量** | 500+ 直播源 |
-| 👥 **註冊用戶** | 持續增長中 |
-| ⏱️ **服務可用性** | 99%+ |
-| 🔄 **運維效率** | 提升 85% (AI Agent 驅動) |
+| 📺 **頻道數量** | 6,346 個直播源 |
+| 👥 **註冊用戶** | 10 |
+| 📁 **頻道分組** | 100+ 個分組 |
+| ⏱️ **服務狀態** | 三個服務全部運行中 |
+| 🖥️ **伺服器** | Ubuntu 24.04 · 4GB RAM · 62GB 磁碟 |
+| 🤖 **AI 運維** | Xiaomi miclaw 全自動管理 |
+
+</div>
+
+### 📡 頻道分組統計（Top 15）
+
+| 分組 | 數量 | 分組 | 數量 |
+|:---:|:---:|:---:|:---:|
+| 📰 News | 800 | 🎵 Music | 595 |
+| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
+| ⚽ Sports | 295 | 📡 衛視頻道 | 172 |
+| 📚 Education | 192 | 🧒 Kids | 167 |
+| ☘️ 浙江頻道 | 144 | 🌍 Documentary | 112 |
+| 📺 央視頻道 | 109 | 🎭 Culture | 104 |
+| 🎬 電影頻道 | 84 | 🏀 體育頻道 | 76 |
+| 🌊 港·澳·台 | 50 | | |
 
 </div>
 

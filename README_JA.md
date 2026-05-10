@@ -116,7 +116,7 @@ Stellar TV は **Telegram Bot** ベースのスマート IPTV ライブ配信プ
 
 | プラン | 料金 | 説明 |
 |:---:|:---:|------|
-| 🆓 **無料トライアル** | **¥0** | 新規ユーザー登録で体験可能 |
+| 🆓 **無料トライアル** | **¥0** | 新規ユーザー登録で3日間体験可能 |
 | 📅 **月額プラン** | **¥9.9** | 30日間有効 |
 | 📅 **四半期プラン** | **¥25.0** | 90日間有効 |
 | 📅 **年額プラン** | **¥88.0** | 365日間有効 |
@@ -135,9 +135,17 @@ graph TB
         Pay["💳 決済サービス<br/>ポート 8088"]
     end
 
-    Bot --> DB[("MySQL 8.0")]
+    Bot --> DB[("JSONファイル保存<br/>users.json / channels.json / orders.json")]
     Web --> DB
     Pay --> DB
+
+    Pay --> PG["💳 独角数卡<br/>(dujiaoka)"]
+
+    subgraph Server["🖥️ サーバー"]
+        direction LR
+        OS["Ubuntu 24.04 LTS"]
+        VPS["RackNerd VPS<br/>4GB KVM"]
+    end
 
     subgraph AIAgent["🤖 AI Agent 自動運用"]
         direction LR
@@ -157,12 +165,13 @@ graph TB
 
 | コンポーネント | 技術 |
 |:---:|------|
-| **Bot フレームワーク** | Python + python-telegram-bot |
+| **Bot フレームワーク** | Python 3.12 + python-telegram-bot |
 | **Web バックエンド** | Flask / Gunicorn |
-| **データベース** | MySQL 8.0 |
-| **決済** | 独角数卡 (dujiaoka) |
+| **データ保存** | JSONファイル (users.json / channels.json / orders.json) |
+| **決済** | 独角数卡 (dujiaoka) + Redis |
 | **デプロイ** | Docker + systemd |
-| **運用** | AI Agent (Xiaomi miclaw + Claude Code) |
+| **サーバー** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
+| **運用** | AI Agent (Xiaomi miclaw) |
 
 ---
 
@@ -172,10 +181,27 @@ graph TB
 
 | 指標 | データ |
 |:---:|:---:|
-| 📺 **チャンネル数** | 500+ ライブソース |
-| 👥 **登録ユーザー** | 増加傾向 |
-| ⏱️ **サービス稼働率** | 99%+ |
-| 🔄 **運用効率** | 85% 向上 (AI Agent 駆動) |
+| 📺 **チャンネル数** | 6,346 ライブソース |
+| 👥 **登録ユーザー** | 10 |
+| 📁 **チャンネルグループ** | 100+ グループ |
+| ⏱️ **サービス状態** | 3サービスすべて稼働中 |
+| 🖥️ **サーバー** | Ubuntu 24.04 · 4GB RAM · 62GB ディスク |
+| 🤖 **AI運用** | Xiaomi miclaw 完全自動管理 |
+
+</div>
+
+### 📡 チャンネルグループ統計（Top 15）
+
+| グループ | 数 | グループ | 数 |
+|:---:|:---:|:---:|:---:|
+| 📰 News | 800 | 🎵 Music | 595 |
+| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
+| ⚽ Sports | 295 | 📡 衛星チャンネル | 172 |
+| 📚 Education | 192 | 🧒 Kids | 167 |
+| ☘️ 浙江チャンネル | 144 | 🌍 Documentary | 112 |
+| 📺 CCTV | 109 | 🎭 Culture | 104 |
+| 🎬 映画チャンネル | 84 | 🏀 スポーツチャンネル | 76 |
+| 🌊 香港·澳門·台湾 | 50 | | |
 
 </div>
 

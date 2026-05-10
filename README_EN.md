@@ -116,7 +116,7 @@ Admins can perform the following operations through the web panel:
 
 | Plan | Price | Description |
 |:---:|:---:|------|
-| 🆓 **Free Trial** | **¥0** | Experience upon new user registration |
+| 🆓 **Free Trial** | **¥0** | 3-day trial upon new user registration |
 | 📅 **Monthly** | **¥9.9** | 30-day validity |
 | 📅 **Quarterly** | **¥25.0** | 90-day validity |
 | 📅 **Annual** | **¥88.0** | 365-day validity |
@@ -135,9 +135,17 @@ graph TB
         Pay["💳 Payment Service<br/>Port 8088"]
     end
 
-    Bot --> DB[("MySQL 8.0")]
+    Bot --> DB[("JSON File Storage<br/>users.json / channels.json / orders.json")]
     Web --> DB
     Pay --> DB
+
+    Pay --> PG["💳 Dujiaoka<br/>(Auto Card Delivery)"]
+
+    subgraph Server["🖥️ Server"]
+        direction LR
+        OS["Ubuntu 24.04 LTS"]
+        VPS["RackNerd VPS<br/>4GB KVM"]
+    end
 
     subgraph AIAgent["🤖 AI Agent Auto-Ops"]
         direction LR
@@ -157,12 +165,13 @@ graph TB
 
 | Component | Technology |
 |:---:|------|
-| **Bot Framework** | Python + python-telegram-bot |
+| **Bot Framework** | Python 3.12 + python-telegram-bot |
 | **Web Backend** | Flask / Gunicorn |
-| **Database** | MySQL 8.0 |
-| **Payment** | Dujiaoka (Auto Card Delivery) |
+| **Data Storage** | JSON Files (users.json / channels.json / orders.json) |
+| **Payment** | Dujiaoka + Redis |
 | **Deployment** | Docker + systemd |
-| **Operations** | AI Agent (Xiaomi miclaw + Claude Code) |
+| **Server** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
+| **Operations** | AI Agent (Xiaomi miclaw) |
 
 ---
 
@@ -172,10 +181,27 @@ graph TB
 
 | Metric | Data |
 |:---:|:---:|
-| 📺 **Channels** | 500+ live sources |
-| 👥 **Users** | Growing steadily |
-| ⏱️ **Uptime** | 99%+ |
-| 🔄 **Ops Efficiency** | +85% (AI Agent driven) |
+| 📺 **Channels** | 6,346 live sources |
+| 👥 **Users** | 10 |
+| 📁 **Groups** | 100+ channel groups |
+| ⏱️ **Service Status** | All 3 services running |
+| 🖥️ **Server** | Ubuntu 24.04 · 4GB RAM · 62GB Disk |
+| 🤖 **AI Ops** | Xiaomi miclaw fully automated |
+
+</div>
+
+### 📡 Channel Group Stats (Top 15)
+
+| Group | Count | Group | Count |
+|:---:|:---:|:---:|:---:|
+| 📰 News | 800 | 🎵 Music | 595 |
+| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
+| ⚽ Sports | 295 | 📡 Satellite | 172 |
+| 📚 Education | 192 | 🧒 Kids | 167 |
+| ☘️ Zhejiang | 144 | 🌍 Documentary | 112 |
+| 📺 CCTV | 109 | 🎭 Culture | 104 |
+| 🎬 Movie Channels | 84 | 🏀 Sports Channels | 76 |
+| 🌊 HK·MO·TW | 50 | | |
 
 </div>
 
