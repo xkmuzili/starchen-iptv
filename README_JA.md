@@ -105,7 +105,7 @@ Stellar TV は **Telegram Bot** ベースのスマート IPTV ライブ配信プ
 | バージョン | 日付 | 更新内容 |
 |:---:|:---:|------|
 | **v2.1** | 2026-05-11 | 🔧 注文管理データ構造の修正 · 📊 データ統計モジュールの修正 · 🎨 グループ統計UIの最適化（M3Uカバレッジ色付き、交換コード青緑背景）· 📋 サイドバーのユーザー管理/M3Uソース位置入れ替え |
-| **v2.0** | 2026-05-08 | ✨ 管理パネル全面リライト（ユーザーパネル+管理パネル）|
+| **v2.0** | 2026-05-08 | ✨ 管理パネル全面リライト |
 | **v1.0** | 2026-05-07 | 🚀 初回デプロイ |
 
 ---
@@ -128,37 +128,16 @@ Stellar TV は **Telegram Bot** ベースのスマート IPTV ライブ配信プ
 ## 🏗️ 技術アーキテクチャ
 
 ```mermaid
-graph TB
-    subgraph StellarTV["⭐ Stellar TV"]
-        Bot["🤖 Telegram Bot<br/>ポート 443"]
-        Web["🖥️ Web管理パネル<br/>ポート 8089"]
-        Pay["💳 決済サービス<br/>ポート 8088"]
-    end
+graph LR
+    Bot["🤖 Telegram Bot<br/>ポート 443"]
+    Web["🖥️ Web管理パネル<br/>ポート 8089"]
+    Pay["💳 決済サービス<br/>ポート 8088"]
+    DB[("JSONファイル保存")]
+    Pay --- PG["💳 独角数卡"]
 
-    Bot --> DB[("JSONファイル保存<br/>users.json / channels.json / orders.json")]
+    Bot --> DB
     Web --> DB
     Pay --> DB
-
-    Pay --> PG["💳 独角数卡<br/>(dujiaoka)"]
-
-    subgraph Server["🖥️ サーバー"]
-        direction LR
-        OS["Ubuntu 24.04 LTS"]
-        VPS["RackNerd VPS<br/>4GB KVM"]
-    end
-
-    subgraph AIAgent["🤖 AI Agent 自動運用"]
-        direction LR
-        E["🔄 プロセス監視"]
-        F["🔥 ファイアウォールクールダウンリトライ"]
-        G["📡 ライブソース更新"]
-        H["🔔 自動修復"]
-    end
-
-    DB --> E
-    DB --> F
-    DB --> G
-    DB --> H
 ```
 
 ### 🛠️ 技術スタック
@@ -167,11 +146,10 @@ graph TB
 |:---:|------|
 | **Bot フレームワーク** | Python 3.12 + python-telegram-bot |
 | **Web バックエンド** | Flask / Gunicorn |
-| **データ保存** | JSONファイル (users.json / channels.json / orders.json) |
-| **決済** | 独角数卡 (dujiaoka) + Redis |
+| **データ保存** | JSONファイル |
+| **決済** | 独角数卡 (dujiaoka) |
 | **デプロイ** | Docker + systemd |
-| **サーバー** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
-| **運用** | AI Agent (Xiaomi miclaw) |
+| **サーバー** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
 
 ---
 
@@ -179,13 +157,9 @@ graph TB
 
 <div align="center">
 
-| 指標 | データ |
-|:---:|:---:|
-| 📺 **チャンネル数** | 6,346 ライブソース |
-| 📁 **チャンネルグループ** | 100+ グループ |
-| ⏱️ **サービス状態** | 3サービスすべて稼働中 |
-| 🖥️ **サーバー** | Ubuntu 24.04 · 4GB RAM · 62GB ディスク |
-| 🤖 **AI運用** | Xiaomi miclaw 完全自動管理 |
+| 📺 チャンネル数 | 📁 グループ | ⏱️ サービス状態 | 🤖 AI運用 |
+|:---:|:---:|:---:|:---:|
+| 6,346 ライブソース | 100+ グループ | 3サービス稼働中 | Xiaomi miclaw 完全自動 |
 
 </div>
 
@@ -195,11 +169,11 @@ graph TB
 |:---:|:---:|:---:|:---:|
 | 📰 News | 800 | 🎵 Music | 595 |
 | 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 衛星チャンネル | 172 |
+| ⚽ Sports | 295 | 📡 衛星 | 172 |
 | 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ 浙江チャンネル | 144 | 🌍 Documentary | 112 |
+| ☘️ 浙江 | 144 | 🌍 Documentary | 112 |
 | 📺 CCTV | 109 | 🎭 Culture | 104 |
-| 🎬 映画チャンネル | 84 | 🏀 スポーツチャンネル | 76 |
+| 🎬 映画 | 84 | 🏀 スポーツ | 76 |
 | 🌊 香港·澳門·台湾 | 50 | | |
 
 </div>

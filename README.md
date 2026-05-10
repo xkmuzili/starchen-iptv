@@ -104,8 +104,8 @@
 
 | 版本 | 日期 | 更新内容 |
 |:---:|:---:|------|
-| **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面（M3U覆盖率带颜色、兑换码蓝绿背景）· 📋 侧边栏用户管理/M3U源位置对调 · 📝 后台模块列表同步实际侧边栏（新增源监控、订单管理、数据统计）· 📊 项目数据同步服务器实际数据（6346频道、10用户、100+分组）· 🏗️ 技术架构图更新（JSON存储、Ubuntu 24.04、RackNerd VPS）|
-| **v2.0** | 2026-05-08 | ✨ 管理面板全面重写（前台用户面板+后台管理面板）|
+| **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面（M3U覆盖率带颜色、兑换码蓝绿背景）· 📋 侧边栏用户管理/M3U源位置对调 · 📝 后台模块列表同步实际侧边栏（新增源监控、订单管理、数据统计）|
+| **v2.0** | 2026-05-08 | ✨ 后台管理面板全面重写 |
 | **v1.0** | 2026-05-07 | 🚀 首次部署上线 |
 
 ---
@@ -128,37 +128,16 @@
 ## 🏗️ 技术架构
 
 ```mermaid
-graph TB
-    subgraph StellarTV["⭐ 星辰 · Stellar TV"]
-        Bot["🤖 Telegram Bot<br/>端口 443"]
-        Web["🖥️ Web 管理面板<br/>端口 8089"]
-        Pay["💳 支付服务<br/>端口 8088"]
-    end
+graph LR
+    Bot["🤖 Telegram Bot<br/>端口 443"]
+    Web["🖥️ Web 管理面板<br/>端口 8089"]
+    Pay["💳 支付服务<br/>端口 8088"]
+    DB[("JSON 文件存储")]
+    Pay --- PG["💳 独角数卡"]
 
-    Bot --> DB[("JSON 文件存储<br/>users.json / channels.json / orders.json")]
+    Bot --> DB
     Web --> DB
     Pay --> DB
-
-    Pay --> PG["💳 独角数卡<br/>(dujiaoka)"]
-
-    subgraph Server["🖥️ 服务器"]
-        direction LR
-        OS["Ubuntu 24.04 LTS"]
-        VPS["RackNerd VPS<br/>4GB KVM"]
-    end
-
-    subgraph AIAgent["🤖 AI Agent 自动运维"]
-        direction LR
-        E["🔄 进程监控"]
-        F["🔥 防火墙冷却重试"]
-        G["📡 直播源更新"]
-        H["🔔 故障自愈"]
-    end
-
-    DB --> E
-    DB --> F
-    DB --> G
-    DB --> H
 ```
 
 ### 🛠️ 技术栈
@@ -167,11 +146,10 @@ graph TB
 |:---:|------|
 | **Bot 框架** | Python 3.12 + python-telegram-bot |
 | **Web 后端** | Flask / Gunicorn |
-| **数据存储** | JSON 文件 (users.json / channels.json / orders.json) |
-| **支付** | 独角数卡 (dujiaoka) + Redis |
+| **数据存储** | JSON 文件 |
+| **支付** | 独角数卡 (dujiaoka) |
 | **部署** | Docker + systemd |
-| **服务器** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
-| **运维** | AI Agent (Xiaomi miclaw) |
+| **服务器** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
 
 ---
 
@@ -179,13 +157,9 @@ graph TB
 
 <div align="center">
 
-| 指标 | 数据 |
-|:---:|:---:|
-| 📺 **频道数量** | 6,346 个直播源 |
-| 📁 **频道分组** | 100+ 个分组 |
-| ⏱️ **服务状态** | 三个服务全部运行中 |
-| 🖥️ **服务器** | Ubuntu 24.04 · 4GB RAM · 62GB 磁盘 |
-| 🤖 **AI 运维** | Xiaomi miclaw 全自动管理 |
+| 📺 频道数量 | 📁 频道分组 | ⏱️ 服务状态 | 🤖 AI 运维 |
+|:---:|:---:|:---:|:---:|
+| 6,346 个直播源 | 100+ 个分组 | 三个服务运行中 | Xiaomi miclaw 全自动管理 |
 
 </div>
 
@@ -195,11 +169,11 @@ graph TB
 |:---:|:---:|:---:|:---:|
 | 📰 News | 800 | 🎵 Music | 595 |
 | 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 卫视频道 | 172 |
+| ⚽ Sports | 295 | 📡 卫视 | 172 |
 | 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ 浙江频道 | 144 | 🌍 Documentary | 112 |
-| 📺 央视频道 | 109 | 🎭 Culture | 104 |
-| 🎬 电影频道 | 84 | 🏀 体育频道 | 76 |
+| ☘️ 浙江 | 144 | 🌍 Documentary | 112 |
+| 📺 央视 | 109 | 🎭 Culture | 104 |
+| 🎬 电影 | 84 | 🏀 体育 | 76 |
 | 🌊 港·澳·台 | 50 | | |
 
 </div>

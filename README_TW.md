@@ -105,7 +105,7 @@
 | 版本 | 日期 | 更新內容 |
 |:---:|:---:|------|
 | **v2.1** | 2026-05-11 | 🔧 修復訂單管理資料結構 · 📊 修復資料統計模組 · 🎨 優化分組統計介面（M3U覆蓋率帶顏色、兌換碼藍綠背景）· 📋 側邊欄使用者管理/M3U源位置對調 |
-| **v2.0** | 2026-05-08 | ✨ 管理面板全面重寫（前台使用者面板+後台管理面板）|
+| **v2.0** | 2026-05-08 | ✨ 後台管理面板全面重寫 |
 | **v1.0** | 2026-05-07 | 🚀 首次部署上線 |
 
 ---
@@ -128,37 +128,16 @@
 ## 🏗️ 技術架構
 
 ```mermaid
-graph TB
-    subgraph StellarTV["⭐ 星辰 · Stellar TV"]
-        Bot["🤖 Telegram Bot<br/>連接埠 443"]
-        Web["🖥️ Web 管理面板<br/>連接埠 8089"]
-        Pay["💳 支付服務<br/>連接埠 8088"]
-    end
+graph LR
+    Bot["🤖 Telegram Bot<br/>連接埠 443"]
+    Web["🖥️ Web 管理面板<br/>連接埠 8089"]
+    Pay["💳 支付服務<br/>連接埠 8088"]
+    DB[("JSON 檔案儲存")]
+    Pay --- PG["💳 獨角數卡"]
 
-    Bot --> DB[("JSON 檔案儲存<br/>users.json / channels.json / orders.json")]
+    Bot --> DB
     Web --> DB
     Pay --> DB
-
-    Pay --> PG["💳 獨角數卡<br/>(dujiaoka)"]
-
-    subgraph Server["🖥️ 伺服器"]
-        direction LR
-        OS["Ubuntu 24.04 LTS"]
-        VPS["RackNerd VPS<br/>4GB KVM"]
-    end
-
-    subgraph AIAgent["🤖 AI Agent 自動運維"]
-        direction LR
-        E["🔄 進程監控"]
-        F["🔥 防火牆冷卻重試"]
-        G["📡 直播源更新"]
-        H["🔔 故障自癒"]
-    end
-
-    DB --> E
-    DB --> F
-    DB --> G
-    DB --> H
 ```
 
 ### 🛠️ 技術棧
@@ -167,11 +146,10 @@ graph TB
 |:---:|------|
 | **Bot 框架** | Python 3.12 + python-telegram-bot |
 | **Web 後端** | Flask / Gunicorn |
-| **資料儲存** | JSON 檔案 (users.json / channels.json / orders.json) |
-| **支付** | 獨角數卡 (dujiaoka) + Redis |
+| **資料儲存** | JSON 檔案 |
+| **支付** | 獨角數卡 (dujiaoka) |
 | **部署** | Docker + systemd |
-| **伺服器** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
-| **運維** | AI Agent (Xiaomi miclaw) |
+| **伺服器** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
 
 ---
 
@@ -179,13 +157,9 @@ graph TB
 
 <div align="center">
 
-| 指標 | 數據 |
-|:---:|:---:|
-| 📺 **頻道數量** | 6,346 個直播源 |
-| 📁 **頻道分組** | 100+ 個分組 |
-| ⏱️ **服務狀態** | 三個服務全部運行中 |
-| 🖥️ **伺服器** | Ubuntu 24.04 · 4GB RAM · 62GB 磁碟 |
-| 🤖 **AI 運維** | Xiaomi miclaw 全自動管理 |
+| 📺 頻道數量 | 📁 頻道分組 | ⏱️ 服務狀態 | 🤖 AI 運維 |
+|:---:|:---:|:---:|:---:|
+| 6,346 個直播源 | 100+ 個分組 | 三個服務運行中 | Xiaomi miclaw 全自動管理 |
 
 </div>
 
@@ -195,11 +169,11 @@ graph TB
 |:---:|:---:|:---:|:---:|
 | 📰 News | 800 | 🎵 Music | 595 |
 | 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 衛視頻道 | 172 |
+| ⚽ Sports | 295 | 📡 衛視 | 172 |
 | 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ 浙江頻道 | 144 | 🌍 Documentary | 112 |
-| 📺 央視頻道 | 109 | 🎭 Culture | 104 |
-| 🎬 電影頻道 | 84 | 🏀 體育頻道 | 76 |
+| ☘️ 浙江 | 144 | 🌍 Documentary | 112 |
+| 📺 央視 | 109 | 🎭 Culture | 104 |
+| 🎬 電影 | 84 | 🏀 體育 | 76 |
 | 🌊 港·澳·台 | 50 | | |
 
 </div>

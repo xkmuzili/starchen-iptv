@@ -105,7 +105,7 @@ Stellar TV는 **Telegram Bot** 기반의 지능형 IPTV 라이브 스트리밍 �
 | 버전 | 날짜 | 업데이트 내용 |
 |:---:|:---:|------|
 | **v2.1** | 2026-05-11 | 🔧 주문 관리 데이터 구조 수정 · 📊 데이터 통계 모듈 수정 · 🎨 그룹 통계 UI 최적화 (M3U 컬러리지 색상 표시, 교환코드 파란초록 배경) · 📋 사이드바 사용자 관리/M3U 소스 위치 교체 |
-| **v2.0** | 2026-05-08 | ✨ 관리 패널 전체 리라이트 (사용자 패널+관리 패널) |
+| **v2.0** | 2026-05-08 | ✨ 관리 패널 전체 리라이트 |
 | **v1.0** | 2026-05-07 | 🚀 최초 배포 |
 
 ---
@@ -128,37 +128,16 @@ Stellar TV는 **Telegram Bot** 기반의 지능형 IPTV 라이브 스트리밍 �
 ## 🏗️ 기술 아키텍처
 
 ```mermaid
-graph TB
-    subgraph StellarTV["⭐ Stellar TV"]
-        Bot["🤖 Telegram Bot<br/>포트 443"]
-        Web["🖥️ Web 관리 패널<br/>포트 8089"]
-        Pay["💳 결제 서비스<br/>포트 8088"]
-    end
+graph LR
+    Bot["🤖 Telegram Bot<br/>포트 443"]
+    Web["🖥️ Web 관리 패널<br/>포트 8089"]
+    Pay["💳 결제 서비스<br/>포트 8088"]
+    DB[("JSON 파일 저장")]
+    Pay --- PG["💳 独角数卡"]
 
-    Bot --> DB[("JSON 파일 저장<br/>users.json / channels.json / orders.json")]
+    Bot --> DB
     Web --> DB
     Pay --> DB
-
-    Pay --> PG["💳 独角数卡<br/>(dujiaoka)"]
-
-    subgraph Server["🖥️ 서버"]
-        direction LR
-        OS["Ubuntu 24.04 LTS"]
-        VPS["RackNerd VPS<br/>4GB KVM"]
-    end
-
-    subgraph AIAgent["🤖 AI Agent 자동 운영"]
-        direction LR
-        E["🔄 프로세스 모니터링"]
-        F["🔥 방화벽 쿨다운 재시도"]
-        G["📡 라이브 소스 업데이트"]
-        H["🔔 자동 복구"]
-    end
-
-    DB --> E
-    DB --> F
-    DB --> G
-    DB --> H
 ```
 
 ### 🛠️ 기술 스택
@@ -167,11 +146,10 @@ graph TB
 |:---:|------|
 | **Bot 프레임워크** | Python 3.12 + python-telegram-bot |
 | **Web 백엔드** | Flask / Gunicorn |
-| **데이터 저장** | JSON 파일 (users.json / channels.json / orders.json) |
-| **결제** | 独角数卡 (dujiaoka) + Redis |
+| **데이터 저장** | JSON 파일 |
+| **결제** | 独角数卡 (dujiaoka) |
 | **배포** | Docker + systemd |
-| **서버** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
-| **운영** | AI Agent (Xiaomi miclaw) |
+| **서버** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
 
 ---
 
@@ -179,13 +157,9 @@ graph TB
 
 <div align="center">
 
-| 지표 | 데이터 |
-|:---:|:---:|
-| 📺 **채널 수** | 6,346 라이브 소스 |
-| 📁 **채널 그룹** | 100+ 그룹 |
-| ⏱️ **서비스 상태** | 3개 서비스 모두 실행 중 |
-| 🖥️ **서버** | Ubuntu 24.04 · 4GB RAM · 62GB 디스크 |
-| 🤖 **AI 운영** | Xiaomi miclaw 완전 자동 관리 |
+| 📺 채널 수 | 📁 그룹 | ⏱️ 서비스 상태 | 🤖 AI 운영 |
+|:---:|:---:|:---:|:---:|
+| 6,346 라이브 소스 | 100+ 그룹 | 3개 서비스 실행 중 | Xiaomi miclaw 완전 자동 |
 
 </div>
 
@@ -195,11 +169,11 @@ graph TB
 |:---:|:---:|:---:|:---:|
 | 📰 News | 800 | 🎵 Music | 595 |
 | 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 위성 채널 | 172 |
+| ⚽ Sports | 295 | 📡 위성 | 172 |
 | 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ 저장 채널 | 144 | 🌍 Documentary | 112 |
+| ☘️ 저장 | 144 | 🌍 Documentary | 112 |
 | 📺 CCTV | 109 | 🎭 Culture | 104 |
-| 🎬 영화 채널 | 84 | 🏀 스포츠 채널 | 76 |
+| 🎬 영화 | 84 | 🏀 스포츠 | 76 |
 | 🌊 홍콩·마카오·대만 | 50 | | |
 
 </div>

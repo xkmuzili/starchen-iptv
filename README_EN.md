@@ -105,7 +105,7 @@ Admins can perform the following operations through the web panel:
 | Version | Date | Updates |
 |:---:|:---:|------|
 | **v2.1** | 2026-05-11 | 🔧 Fix order management data structure · 📊 Fix data statistics module · 🎨 Optimize group statistics UI (M3U coverage with colors, redemption code blue-green background) · 📋 Swap sidebar positions of User Management / M3U Sources |
-| **v2.0** | 2026-05-08 | ✨ Full admin panel rewrite (user panel + admin panel) |
+| **v2.0** | 2026-05-08 | ✨ Full admin panel rewrite |
 | **v1.0** | 2026-05-07 | 🚀 Initial deployment |
 
 ---
@@ -128,37 +128,16 @@ Admins can perform the following operations through the web panel:
 ## 🏗️ Technical Architecture
 
 ```mermaid
-graph TB
-    subgraph StellarTV["⭐ Stellar TV"]
-        Bot["🤖 Telegram Bot<br/>Port 443"]
-        Web["🖥️ Web Admin Panel<br/>Port 8089"]
-        Pay["💳 Payment Service<br/>Port 8088"]
-    end
+graph LR
+    Bot["🤖 Telegram Bot<br/>Port 443"]
+    Web["🖥️ Web Admin Panel<br/>Port 8089"]
+    Pay["💳 Payment Service<br/>Port 8088"]
+    DB[("JSON File Storage")]
+    Pay --- PG["💳 Dujiaoka"]
 
-    Bot --> DB[("JSON File Storage<br/>users.json / channels.json / orders.json")]
+    Bot --> DB
     Web --> DB
     Pay --> DB
-
-    Pay --> PG["💳 Dujiaoka<br/>(Auto Card Delivery)"]
-
-    subgraph Server["🖥️ Server"]
-        direction LR
-        OS["Ubuntu 24.04 LTS"]
-        VPS["RackNerd VPS<br/>4GB KVM"]
-    end
-
-    subgraph AIAgent["🤖 AI Agent Auto-Ops"]
-        direction LR
-        E["🔄 Process Monitor"]
-        F["🔥 Firewall Cooldown Retry"]
-        G["📡 Source Auto-Update"]
-        H["🔔 Self-Healing"]
-    end
-
-    DB --> E
-    DB --> F
-    DB --> G
-    DB --> H
 ```
 
 ### 🛠️ Tech Stack
@@ -167,11 +146,10 @@ graph TB
 |:---:|------|
 | **Bot Framework** | Python 3.12 + python-telegram-bot |
 | **Web Backend** | Flask / Gunicorn |
-| **Data Storage** | JSON Files (users.json / channels.json / orders.json) |
-| **Payment** | Dujiaoka + Redis |
+| **Data Storage** | JSON Files |
+| **Payment** | Dujiaoka |
 | **Deployment** | Docker + systemd |
-| **Server** | Ubuntu 24.04 LTS · RackNerd VPS · 4GB RAM |
-| **Operations** | AI Agent (Xiaomi miclaw) |
+| **Server** | Ubuntu 24.04 · RackNerd VPS · 4GB RAM |
 
 ---
 
@@ -179,13 +157,9 @@ graph TB
 
 <div align="center">
 
-| Metric | Data |
-|:---:|:---:|
-| 📺 **Channels** | 6,346 live sources |
-| 📁 **Groups** | 100+ channel groups |
-| ⏱️ **Service Status** | All 3 services running |
-| 🖥️ **Server** | Ubuntu 24.04 · 4GB RAM · 62GB Disk |
-| 🤖 **AI Ops** | Xiaomi miclaw fully automated |
+| 📺 Channels | 📁 Groups | ⏱️ Status | 🤖 AI Ops |
+|:---:|:---:|:---:|:---:|
+| 6,346 live sources | 100+ groups | All 3 services running | Xiaomi miclaw |
 
 </div>
 
@@ -199,7 +173,7 @@ graph TB
 | 📚 Education | 192 | 🧒 Kids | 167 |
 | ☘️ Zhejiang | 144 | 🌍 Documentary | 112 |
 | 📺 CCTV | 109 | 🎭 Culture | 104 |
-| 🎬 Movie Channels | 84 | 🏀 Sports Channels | 76 |
+| 🎬 Movies | 84 | 🏀 Sports | 76 |
 | 🌊 HK·MO·TW | 50 | | |
 
 </div>
