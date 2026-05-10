@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.0-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20オンライン-green?style=flat-square)
 
 <br/>
@@ -94,6 +94,16 @@ Stellar TV は **Telegram Bot** ベースのスマート IPTV ライブ配信プ
 | 📢 **お知らせ管理** | Telegram お知らせの編集と配信 |
 
 > ⚠️ 管理パネルは認証された管理者のみアクセス可能で、一般公開されていません。
+
+---
+
+## 📋 更新履歴
+
+| バージョン | 日付 | 更新内容 |
+|:---:|:---:|------|
+| **v2.1** | 2026-05-11 | 🔧 注文管理データ構造の修正 · 📊 データ統計モジュールの修正 · 🎨 グループ統計UIの最適化（M3Uカバレッジ色付き、交換コード青緑背景）· 📋 サイドバーのユーザー管理/M3Uソース位置入れ替え |
+| **v2.0** | 2026-05-08 | ✨ 管理パネル全面リライト（ユーザーパネル+管理パネル）|
+| **v1.0** | 2026-05-07 | 🚀 初回デプロイ |
 
 ---
 

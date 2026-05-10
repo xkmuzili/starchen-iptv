@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.0-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20線上-green?style=flat-square)
 
 <br/>
@@ -94,6 +94,16 @@
 | 📢 **公告管理** | 編輯和推送 Telegram 公告 |
 
 > ⚠️ 管理面板僅對授權管理員開放，不對外提供存取。
+
+---
+
+## 📋 更新日誌
+
+| 版本 | 日期 | 更新內容 |
+|:---:|:---:|------|
+| **v2.1** | 2026-05-11 | 🔧 修復訂單管理資料結構 · 📊 修復資料統計模組 · 🎨 優化分組統計介面（M3U覆蓋率帶顏色、兌換碼藍綠背景）· 📋 側邊欄使用者管理/M3U源位置對調 |
+| **v2.0** | 2026-05-08 | ✨ 管理面板全面重寫（前台使用者面板+後台管理面板）|
+| **v1.0** | 2026-05-07 | 🚀 首次部署上線 |
 
 ---
 

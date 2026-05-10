@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.0-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20Online-green?style=flat-square)
 
 <br/>
@@ -94,6 +94,16 @@ Admins can perform the following operations through the web panel:
 | 📢 **Announcements** | Edit and push Telegram announcements |
 
 > ⚠️ Admin panel is only available to authorized administrators, not publicly accessible.
+
+---
+
+## 📋 Changelog
+
+| Version | Date | Updates |
+|:---:|:---:|------|
+| **v2.1** | 2026-05-11 | 🔧 Fix order management data structure · 📊 Fix data statistics module · 🎨 Optimize group statistics UI (M3U coverage with colors, redemption code blue-green background) · 📋 Swap sidebar positions of User Management / M3U Sources |
+| **v2.0** | 2026-05-08 | ✨ Full admin panel rewrite (user panel + admin panel) |
+| **v1.0** | 2026-05-07 | 🚀 Initial deployment |
 
 ---
 

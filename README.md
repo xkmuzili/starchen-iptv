@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.0-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20在线-green?style=flat-square)
 
 <br/>
@@ -94,6 +94,16 @@
 | 📢 **公告管理** | 编辑和推送 Telegram 公告 |
 
 > ⚠️ 管理面板仅对授权管理员开放，不对外提供访问。
+
+---
+
+## 📋 更新日志
+
+| 版本 | 日期 | 更新内容 |
+|:---:|:---:|------|
+| **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面（M3U覆盖率带颜色、兑换码蓝绿背景）· 📋 侧边栏用户管理/M3U源位置对调 |
+| **v2.0** | 2026-05-08 | ✨ 管理面板全面重写（前台用户面板+后台管理面板）|
+| **v1.0** | 2026-05-07 | 🚀 首次部署上线 |
 
 ---
 
