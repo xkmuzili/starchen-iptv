@@ -182,7 +182,6 @@ graph TB
 | Metric | Data |
 |:---:|:---:|
 | 📺 **Channels** | 6,346 live sources |
-| 👥 **Users** | 10 |
 | 📁 **Groups** | 100+ channel groups |
 | ⏱️ **Service Status** | All 3 services running |
 | 🖥️ **Server** | Ubuntu 24.04 · 4GB RAM · 62GB Disk |
