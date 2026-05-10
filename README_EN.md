@@ -87,11 +87,14 @@ Admins can perform the following operations through the web panel:
 |:---:|------|
 | 📊 **Dashboard** | Real-time user data, channel status, revenue statistics |
 | 📡 **Channel Management** | Add, edit, delete live channels |
-| 📋 **M3U Source Management** | Manage live sources with auto-update support |
+| 📋 **M3U Sources** | Manage live sources with auto-update support |
+| ❤️ **Source Monitor** | Monitor live source availability and status |
 | 👥 **User Management** | View user status, enable/disable accounts |
-| 🎫 **Card Management** | Generate and manage recharge cards |
-| ⚙️ **System Settings** | Configure service parameters |
+| 🎫 **Redemption Codes** | Generate and manage redemption codes |
 | 📢 **Announcements** | Edit and push Telegram announcements |
+| 📋 **Order Management** | View and manage user orders |
+| 📊 **Data Statistics** | Group statistics, data analysis reports |
+| ⚙️ **System Settings** | Configure service parameters |
 
 > ⚠️ Admin panel is only available to authorized administrators, not publicly accessible.
 
