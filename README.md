@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.2-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.3-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20在线-green?style=flat-square)
 
 <br/>
@@ -114,6 +114,7 @@
 
 | 版本 | 日期 | 更新内容 |
 |:---:|:---:|------|
+| **v2.3** | 2026-05-13 | 🐛 修复数据库admin_users表 · 🔧 修复require_admin装饰器 · 📝 修复群组名称获取 · 🎫 修复兑换卡批量导入 · 📊 频道数6287+221分组 |
 | **v2.2** | 2026-05-11 | 📢 公告系统升级 · 🔄 直播源每6小时自动更新 · 📺 频道数突破6300+ · 🎨 后台界面优化 |
 | **v2.1** | 2026-05-11 | 🔧 修复订单管理数据结构 · 📊 修复数据统计模块 · 🎨 优化分组统计界面 · 📋 侧边栏对调 |
 | **v2.0** | 2026-05-08 | ✨ 后台管理面板全面重写 |
@@ -176,7 +177,7 @@ graph LR
 
 | 📺 频道数量 | 📁 频道分组 | ⏱️ 服务状态 | 🤖 AI 运维 |
 |:---:|:---:|:---:|:---:|
-| 6,346 个直播源 | 100+ 个分组 | 三个服务运行中 | Xiaomi miclaw 全自动管理 |
+| 6,287 个直播源 | 221 个分组 | 三个服务运行中 | Xiaomi miclaw 全自动管理 |
 
 </div>
 
@@ -186,14 +187,15 @@ graph LR
 
 | 分组 | 数量 | 分组 | 数量 |
 |:---:|:---:|:---:|:---:|
-| 📰 News | 800 | 🎵 Music | 595 |
-| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 卫视 | 172 |
-| 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ 浙江 | 144 | 🌍 Documentary | 112 |
-| 📺 央视 | 109 | 🎭 Culture | 104 |
-| 🎬 电影 | 84 | 🏀 体育 | 76 |
-| 🌊 港·澳·台 | 50 | | |
+| 📰 News | 800 | 🎵 Music | 597 |
+| 🎭 Entertainment | 569 | 🎬 Movies | 363 |
+| ⚽ Sports | 296 | 📚 Education | 194 |
+| 📡 卫视 | 166 | 🧒 Kids | 169 |
+| ☘️ 浙江 | 143 | 🌍 Documentary | 112 |
+| ☘️ 河南 | 123 | ☘️ 江苏 | 112 |
+| 📺 央视 | 103 | 🎭 Culture | 105 |
+| 🎬 电影 | 77 | 🏀 体育 | 76 |
+| 🌊 港·澳·台 | 49 | | |
 
 </div>
 

@@ -13,7 +13,7 @@
 ![Stars](https://img.shields.io/github/stars/xkmuzili/starchen-iptv?style=flat-square&color=yellow)
 ![Forks](https://img.shields.io/github/forks/xkmuzili/starchen-iptv?style=flat-square&color=blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square)
-![Version](https://img.shields.io/badge/version-2.1-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.3-brightgreen?style=flat-square)
 ![Status](https://img.shields.io/badge/status-🟢%20Online-green?style=flat-square)
 
 <br/>
@@ -104,7 +104,9 @@ Admins can perform the following operations through the web panel:
 
 | Version | Date | Updates |
 |:---:|:---:|------|
-| **v2.1** | 2026-05-11 | 🔧 Fix order management data structure · 📊 Fix data statistics module · 🎨 Optimize group statistics UI (M3U coverage with colors, redemption code blue-green background) · 📋 Swap sidebar positions of User Management / M3U Sources |
+| **v2.3** | 2026-05-13 | 🐛 Fix database admin_users table · 🔧 Fix require_admin decorator · 📝 Fix group name retrieval · 🎫 Fix redemption code batch import · 📊 6287 channels + 221 groups |
+| **v2.2** | 2026-05-11 | 📢 Announcement system upgrade · 🔄 Auto M3U update every 6h · 📺 6300+ channels · 🎨 Admin UI polish |
+| **v2.1** | 2026-05-11 | 🔧 Fix order management data structure · 📊 Fix data statistics module · 🎨 Optimize group statistics UI · 📋 Swap sidebar positions |
 | **v2.0** | 2026-05-08 | ✨ Full admin panel rewrite |
 | **v1.0** | 2026-05-07 | 🚀 Initial deployment |
 
@@ -159,7 +161,7 @@ graph LR
 
 | 📺 Channels | 📁 Groups | ⏱️ Status | 🤖 AI Ops |
 |:---:|:---:|:---:|:---:|
-| 6,346 live sources | 100+ groups | All 3 services running | Xiaomi miclaw |
+| 6,287 live sources | 221 groups | All 3 services running | Xiaomi miclaw |
 
 </div>
 
@@ -167,14 +169,15 @@ graph LR
 
 | Group | Count | Group | Count |
 |:---:|:---:|:---:|:---:|
-| 📰 News | 800 | 🎵 Music | 595 |
-| 🎭 Entertainment | 562 | 🎬 Movies | 357 |
-| ⚽ Sports | 295 | 📡 Satellite | 172 |
-| 📚 Education | 192 | 🧒 Kids | 167 |
-| ☘️ Zhejiang | 144 | 🌍 Documentary | 112 |
-| 📺 CCTV | 109 | 🎭 Culture | 104 |
-| 🎬 Movies | 84 | 🏀 Sports | 76 |
-| 🌊 HK·MO·TW | 50 | | |
+| 📰 News | 800 | 🎵 Music | 597 |
+| 🎭 Entertainment | 569 | 🎬 Movies | 363 |
+| ⚽ Sports | 296 | 📚 Education | 194 |
+| 📡 Satellite | 166 | 🧒 Kids | 169 |
+| ☘️ Zhejiang | 143 | 🌍 Documentary | 112 |
+| ☘️ Henan | 123 | ☘️ Jiangsu | 112 |
+| 📺 CCTV | 103 | 🎭 Culture | 105 |
+| 🎬 Movies | 77 | 🏀 Sports | 76 |
+| 🌊 HK·MO·TW | 49 | | |
 
 </div>
 
